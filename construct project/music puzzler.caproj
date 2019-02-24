@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>music puzzler</name>
+    <description></description>
+    <version>1</version>
+    <author>narF</author>
+    <author-email>narF@narF.ca</author-email>
+    <author-website>http://narF.ca</author-website>
+    <app-id>ca.narF.music_puzzler</app-id>
+    <unique-id>2m2oqhlgof90t</unique-id>
+    <saved-with-version>26500</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="LocalStorage" version="1">Local storage</plugin>
+        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="DragnDrop" version="1">Drag &amp; Drop</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Persist" version="1">Persist</behavior>
+        <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>1920</width>
+        <height>1080</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>game</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Orientations">Portrait</prop>
+        <prop name="Pause on unfocus">Yes</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="plugins">
+            <object-type name="Browser" sid="202999587757579">
+                <plugin id="Browser" />
+            </object-type>
+            <object-type name="Function" sid="537760214196057">
+                <plugin id="Function" />
+            </object-type>
+            <object-type name="Touch" sid="984107394034640">
+                <plugin id="Touch" />
+            </object-type>
+            <object-type name="Keyboard" sid="811325036075786">
+                <plugin id="Keyboard" />
+            </object-type>
+            <object-type name="LocalStorage" sid="218181996010881">
+                <plugin id="LocalStorage" />
+            </object-type>
+        </object-folder>
+        <object-type name="wall" sid="260957157762034">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="bottom" sid="180816845707357" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Physics" sid="840028675690689">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="949514647668358" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ballColl" sid="164567742397756">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="state" sid="418123223696370" type="string" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Physics" sid="269794333250925">
+                    <behavior id="Physics" />
+                </behavior-type>
+                <behavior-type name="Timer" sid="919049080606572">
+                    <behavior id="Timer" />
+                </behavior-type>
+                <behavior-type name="DragDrop" sid="845350048941226">
+                    <behavior id="DragnDrop" />
+                </behavior-type>
+            </behaviors>
+            <container>
+                <type>ballColl</type>
+                <type>ballView</type>
+                <type>particleBomb</type>
+                <type>particleLaser</type>
+            </container>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="black" pingpong="0" repeatcount="1" repeatto="0" sid="688599390222172" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="blue" pingpong="0" repeatcount="1" repeatto="0" sid="871343714433077" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="red" pingpong="0" repeatcount="1" repeatto="0" sid="430297634961399" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="green" pingpong="0" repeatcount="1" repeatto="0" sid="720297306585290" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="yellow" pingpong="0" repeatcount="1" repeatto="0" sid="360761108836928" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ballView" sid="308158835534726">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="986362685165564">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <container>
+                <type>ballColl</type>
+                <type>ballView</type>
+                <type>particleBomb</type>
+                <type>particleLaser</type>
+            </container>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="black" pingpong="0" repeatcount="1" repeatto="0" sid="570844678676523" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\narF\Documents\github\puzzle-xmas\art\biscuit_0.png" />
+                </animation>
+                <animation framecount="1" loop="0" name="blue" pingpong="0" repeatcount="1" repeatto="0" sid="449807666769100" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.504854" original-source="C:\Users\narF\Documents\github\puzzle-xmas\art\biscuit_1.png" />
+                </animation>
+                <animation framecount="1" loop="0" name="red" pingpong="0" repeatcount="1" repeatto="0" sid="564686966530669" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\narF\Documents\github\puzzle-xmas\art\biscuit_3.png" />
+                </animation>
+                <animation framecount="1" loop="0" name="green" pingpong="0" repeatcount="1" repeatto="0" sid="820001598996638" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\narF\Documents\github\puzzle-xmas\art\biscuit_2.png" />
+                </animation>
+                <animation framecount="1" loop="0" name="yellow" pingpong="0" repeatcount="1" repeatto="0" sid="647308469166068" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\narF\Documents\github\puzzle-xmas\art\biscuit_4.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="spawner" sid="290112103711740">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="469574532361890" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="influence" sid="176063583068289">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Physics" sid="144594940071607">
+                    <behavior id="Physics" />
+                </behavior-type>
+                <behavior-type name="Pin" sid="127649763741454">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="918623816929949" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="explosion" sid="132198508689196">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="469030214481097">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="371298394724826" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="score" sid="831869978925140">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="scoreAdd" sid="403794947695111">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="395020600106902">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Fade" sid="783380610488915">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="tapDisplay" sid="390041710654634">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="particleBomb" sid="381894619950578">
+            <plugin id="Particles" />
+            <behaviors>
+                <behavior-type name="Pin" sid="880839633569359">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <container>
+                <type>ballColl</type>
+                <type>ballView</type>
+                <type>particleBomb</type>
+                <type>particleLaser</type>
+            </container>
+            <texture />
+        </object-type>
+        <object-type name="particleLaser" sid="575630157643620">
+            <plugin id="Particles" />
+            <behaviors>
+                <behavior-type name="Pin" sid="181677798889640">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <container>
+                <type>ballColl</type>
+                <type>ballView</type>
+                <type>particleBomb</type>
+                <type>particleLaser</type>
+            </container>
+            <texture />
+        </object-type>
+        <object-type name="explosionBomb" sid="892967074336779">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="460849048112298" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.173077" y="0.173077" />
+                            <point x="0.5" y="0.0576923" />
+                            <point x="0.807692" y="0.192308" />
+                            <point x="0.942308" y="0.5" />
+                            <point x="0.807692" y="0.807692" />
+                            <point x="0.5" y="0.942308" />
+                            <point x="0.173077" y="0.826923" />
+                            <point x="0.0384615" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type global="1" name="highscore" sid="986215361869755">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="nameBox" sid="494972431126158">
+            <plugin id="TextBox" />
+            <behaviors>
+                <behavior-type name="Persist" sid="896016761943427">
+                    <behavior id="Persist" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="sendButton" sid="289740718389892">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="highscoreDisplay" sid="984543138754134">
+            <plugin id="Text" />
+        </object-type>
+    </object-folder>
+    <families>
+        <family name="colored" plugin-id="Sprite" sid="555123717984583">
+            <members>
+                <member>ballColl</member>
+                <member>ballView</member>
+                <member>explosion</member>
+                <member>influence</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="color" sid="564496969862127" type="string" />
+            </instance-variables>
+        </family>
+        <family name="ballViewF" plugin-id="Sprite" sid="495621013382505">
+            <members>
+                <member>ballView</member>
+            </members>
+        </family>
+    </families>
+    <layout-folder>
+        <layout>game.xml</layout>
+        <layout>spawned objects.xml</layout>
+        <layout>game over.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>game events.xml</event-sheet>
+        <event-sheet>game over events.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Function" uid="10" />
+        <global-instance type="Browser" uid="11" />
+        <global-instance type="Touch" uid="12">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Keyboard" uid="6" />
+        <global-instance type="LocalStorage" uid="26" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

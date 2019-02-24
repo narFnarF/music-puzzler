@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>game events</name>
+    <events>
+        <comment>parameters</comment>
+        <variable constant="1" name="TOUCH_INIT" sid="193918613332080" static="0" type="number">999</variable>
+        <variable constant="1" name="BALLS_FOR_BOMBS" sid="554021193882209" static="0" type="number">999</variable>
+        <variable constant="1" name="BALLS_FOR_LASER" sid="621284718965849" static="0" type="number">999</variable>
+        <event-block sid="428401861144703">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="191641511827932" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="474199313049968" type="System">
+                    <param id="0" name="Variable">touch</param>
+                    <param id="1" name="Value">TOUCH_INIT</param>
+                </action>
+                <action id="-9" name="Set value" sid="370798965790707" type="System">
+                    <param id="0" name="Variable">score</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="664196913424851" type="System">
+                    <param id="0" name="Seconds">1.5</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>instance variables</comment>
+        <variable constant="0" name="score" sid="968227059861179" static="0" type="number">0</variable>
+        <variable constant="0" name="touch" sid="169593481736544" static="0" type="number">0</variable>
+        <event-group description="" sid="413910405155343" title="balls">
+            <sub-events>
+                <variable constant="0" name="ballViewSizeMod" sid="903474557376692" static="0" type="number">1</variable>
+                <event-block sid="461941583238247">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="864262226414440" type="ballColl" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="751582074015629" type="ballColl">
+                            <param id="0" name="Object">influence</param>
+                            <param id="1" name="Layer">&quot;influence&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="307106508984282" type="influence">
+                            <param id="0" name="Pin to">ballColl</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="766814199166959" type="influence">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="510125351813504" type="influence">
+                            <param id="0" name="Instance variable">color</param>
+                            <param id="1" name="Value">ballColl.color</param>
+                        </action>
+                        <action disabled="1" id="-26" name="Move to layer" sid="354612300817228" type="influence">
+                            <param id="0" name="Layer">&quot;influence&quot;</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="582010767457430" type="influence">
+                            <param id="0" name="Width">ballColl.Width</param>
+                            <param id="1" name="Height">ballColl.Height</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="681173048419518" type="ballView">
+                            <param id="0" name="Pin to">ballColl</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action behavior="Timer" id="0" name="Start timer" sid="417372509088493" type="ballColl">
+                            <param id="0" name="Duration">1</param>
+                            <param id="1" name="Type">0</param>
+                            <param id="2" name="Tag">&quot;ready&quot;</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="226607544992326" type="particleBomb">
+                            <param id="0" name="Pin to">ballColl</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="183414138986000" type="particleLaser">
+                            <param id="0" name="Pin to">ballColl</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="0" name="Set spraying" sid="134904892347967" type="particleBomb">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="0" name="Set spraying" sid="427075300117972" type="particleLaser">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-26" name="Move to layer" sid="317922031568197" type="particleBomb">
+                            <param id="0" name="Layer">&quot;particles&quot;</param>
+                        </action>
+                        <action id="-26" name="Move to layer" sid="973981352440278" type="particleLaser">
+                            <param id="0" name="Layer">&quot;particles&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="641739927496553" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="143984520931391" type="ballColl">
+                            <param id="0" name="Animation">ballColl.color</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="250831284005423" type="ballView">
+                            <param id="0" name="Instance variable">color</param>
+                            <param id="1" name="Value">ballColl.color</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="990514206164504" type="ballView">
+                            <param id="0" name="Animation">ballColl.color</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="252156655237155" type="ballView">
+                            <param id="0" name="Width">ballColl.Width * ballViewSizeMod</param>
+                            <param id="1" name="Height">ballColl.Height * ballViewSizeMod</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="345779696397425">
+                    <conditions />
+                    <actions>
+                        <action id="4" name="Set animation" sid="472767413849831" type="ballColl">
+                            <param id="0" name="Animation">ballColl.color</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="368195667515573" type="ballView">
+                            <param id="0" name="Instance variable">color</param>
+                            <param id="1" name="Value">ballColl.color</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="547981170035268" type="ballView">
+                            <param id="0" name="Animation">ballColl.color</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="766134493970408" type="ballView">
+                            <param id="0" name="Width">ballColl.Width * ballViewSizeMod</param>
+                            <param id="1" name="Height">ballColl.Height * ballViewSizeMod</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="995389204686353" title="drag balls">
+            <sub-events>
+                <variable constant="0" name="size" sid="228955999894689" static="1" type="number">104</variable>
+                <event-block sid="265284097633497">
+                    <conditions>
+                        <condition behavior="DragDrop" id="1" name="On drag start" sid="871456472958215" type="ballColl" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Physics" id="27" name="Set enabled" sid="950347623218275" type="ballColl">
+                            <param id="0" name="Mode">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="583238967002230" type="System">
+                            <param id="0" name="Variable">size</param>
+                            <param id="1" name="Value">ballColl.Width</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="474325665467135">
+                    <conditions>
+                        <condition behavior="DragDrop" id="2" name="On drop" sid="927719374534051" type="ballColl" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Physics" id="27" name="Set enabled" sid="322387909352595" type="ballColl">
+                            <param id="0" name="Mode">1</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="622303214290194" type="ballColl">
+                            <param id="0" name="Scale">0.1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="820473414519951" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action behavior="Physics" id="9" name="Set angular velocity" sid="472732901220511" type="ballColl">
+                            <param id="0" name="Angular velocity">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <variable constant="0" name="lerpSpeed" sid="579085088543532" static="0" type="number">0.2</variable>
+                <event-block sid="715344424790289">
+                    <conditions />
+                    <actions>
+                        <action id="-7" name="Set size" sid="929977425912316" type="ballColl">
+                            <param id="0" name="Width">lerp(ballColl.Width, size, lerpSpeed)</param>
+                            <param id="1" name="Height">lerp(ballColl.Height, size, lerpSpeed)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="751726427013592" title="find connecting balls">
+            <sub-events>
+                <event-block sid="377306504673322">
+                    <conditions />
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="355358973654367" title="spawner">
+            <sub-events>
+                <variable constant="0" name="maxBalls" sid="270737050089395" static="0" type="number">120</variable>
+                <variable comment="1=true" constant="0" name="active" sid="908116953916892" static="1" type="number">1</variable>
+                <event-block sid="717878350755634">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="367138538149156" type="System">
+                            <param id="0" name="Interval (seconds)">2</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="186911730395319" type="System">
+                            <param id="0" name="First value">ballColl.Count</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">maxBalls</param>
+                        </condition>
+                        <condition id="-12" name="Repeat" sid="731328693163393" type="System">
+                            <param id="0" name="Count">maxBalls-ballColl.Count</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="492580026119586" type="Function">
+                            <param id="0" name="Name">&quot;spawner .spawn&quot;</param>
+                            <param id="1" name="Parameter {n}">choose(&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;, &quot;yellow&quot;, &quot;black&quot;)</param>
+                        </action>
+                        <action disabled="1" id="0" name="Call function" sid="612905745180496" type="Function">
+                            <param id="0" name="Name">&quot;spawner .spawn&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;green&quot;</param>
+                        </action>
+                        <action disabled="1" id="0" name="Call function" sid="412934728832504" type="Function">
+                            <param id="0" name="Name">&quot;spawner .spawn&quot;</param>
+                            <param id="1" name="Parameter {n}">choose(&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;, &quot;yellow&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="412916585638411">
+                    <conditions>
+                        <condition id="0" name="On function" sid="676371386200733" type="Function">
+                            <param id="0" name="Name">&quot;spawner .spawn&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="color" sid="420917656910765" static="0" type="text"></variable>
+                        <event-block sid="694281492550964">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="774781544065209" type="System">
+                                    <param id="0" name="Variable">color</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="846266362109984">
+                            <conditions />
+                            <actions>
+                                <action id="-3" name="Create object" sid="669680767385779" type="System">
+                                    <param id="0" name="Object to create">ballColl</param>
+                                    <param id="1" name="Layer">&quot;game&quot;</param>
+                                    <param id="2" name="X">random(spawner.BBoxLeft, spawner.BBoxRight)</param>
+                                    <param id="3" name="Y">random(spawner.BBoxTop, spawner.BBoxBottom)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="487894338533769" type="ballColl">
+                                    <param id="0" name="Instance variable">color</param>
+                                    <param id="1" name="Value">color</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="549722822288734" title="black balls">
+            <sub-events>
+                <event-block sid="905362155952464">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="806405054889960" type="wall">
+                            <param id="0" name="Instance variable">bottom</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="379559712206250" type="ballColl">
+                            <param id="0" name="Object">wall</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="252196306145651" type="ballColl">
+                            <param id="0" name="Instance variable">color</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;black&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="0" name="Call function" sid="826841990881045" type="Function">
+                            <param id="0" name="Name">&quot;ballColl .boom&quot;</param>
+                            <param id="1" name="Parameter {n}">ballColl.UID</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="629358686671295" type="ballColl" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="238612343500145" title="UI">
+            <sub-events>
+                <comment>score UI</comment>
+                <event-block sid="595678236325805">
+                    <conditions />
+                    <actions>
+                        <action id="0" name="Set text" sid="314018156604303" type="score">
+                            <param id="0" name="Text">&quot;Score: &quot; &amp; score</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="119309195538032">
+                    <conditions>
+                        <condition id="0" name="On function" sid="465598626528781" type="Function">
+                            <param id="0" name="Name">&quot;UI .showPlusX&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="nb" sid="755037263175866" static="0" type="number">0</variable>
+                        <event-block sid="727501853257789">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="808685820948876" type="System">
+                                    <param id="0" name="Variable">nb</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <variable constant="0" name="textSizeMultiplier" sid="219653691781903" static="0" type="number">3</variable>
+                        <event-block sid="635548431713684">
+                            <conditions />
+                            <actions>
+                                <action id="-3" name="Create object" sid="633647270307590" type="System">
+                                    <param id="0" name="Object to create">scoreAdd</param>
+                                    <param id="1" name="Layer">&quot;ribbon&quot;</param>
+                                    <param id="2" name="X">600</param>
+                                    <param id="3" name="Y">1164</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="977225029258113" type="scoreAdd">
+                                    <param id="0" name="Angle">-90</param>
+                                </action>
+                                <action id="0" name="Set text" sid="799199790053281" type="scoreAdd">
+                                    <param id="0" name="Text">&quot;+&quot; &amp; nb</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="107434528884973" type="scoreAdd">
+                                    <param id="0" name="Size (pt)">20+(nb*textSizeMultiplier)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="538432536656179">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="237735088815315" type="System">
+                                            <param id="0" name="Variable">nb</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">20</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set font color" sid="933235990780142" type="scoreAdd">
+                                            <param id="0" name="Color">rgb(999, 0, 0)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="801491733908155">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="464203935036113" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set font color" sid="804852534632269" type="scoreAdd">
+                                            <param id="0" name="Color">rgb(0, 0, 0)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="451773017633333" title="debug">
+            <sub-events>
+                <event-block sid="504356774117846">
+                    <conditions>
+                        <condition id="-18" name="Is in preview" sid="281298135301612" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="305326593744687">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="358997362348326" type="Keyboard">
+                                    <param id="0" name="Key">66</param>
+                                </condition>
+                                <condition id="-12" name="Repeat" sid="218055664327625" type="System">
+                                    <param id="0" name="Count">5</param>
+                                </condition>
+                                <condition id="-16" name="Pick random instance" sid="910535008672364" type="System">
+                                    <param id="0" name="Object">ballColl</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set spraying" sid="194351467965785" type="particleBomb">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="440631028954001">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="144023451990195" type="Keyboard">
+                                    <param id="0" name="Key">76</param>
+                                </condition>
+                                <condition id="-12" name="Repeat" sid="438518145039584" type="System">
+                                    <param id="0" name="Count">5</param>
+                                </condition>
+                                <condition id="-16" name="Pick random instance" sid="357286716697379" type="System">
+                                    <param id="0" name="Object">ballColl</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set spraying" sid="449721444028529" type="particleLaser">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
